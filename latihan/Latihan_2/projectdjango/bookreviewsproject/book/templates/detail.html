@@ -1,0 +1,22 @@
+    {% extends 'base.html' %}
+    {% block content %}
+
+    <div class="container">
+        <br>
+        <a class="btn btn-primary" href="{% url 'home' %}" role="button">Back</a>
+        <br><br>
+        <div class="card">
+            <img src="{{ book.gambar.url }}" alt="" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">
+                    {{ book.judul }} | {{book.pengarang}} | {{ book.tanggal_rilis|date:"d-m-y"}}
+                </h5>
+                <p class="card-text">
+                    {{ book.sinopsis }}
+                    <br>
+                    {{ book.isbn }} | {{ book.jumlah_halaman }} | {{ book.publisher.nama }}
+                </p>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}

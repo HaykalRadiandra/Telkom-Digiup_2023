@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <br>
+    <a class="btn btn-primary" href="{% url 'home' %}" role="button">Back</a>
+    <br><br>
+    <div class="card">
+        <img alt="" class="card-img-top" src="{{ makanan.gambar.url }}" />
+        <div class="card-body">
+            <h5 class="card-title fw-bold">{{ makanan.nama }}</h5>
+            <p class="card-text">
+                <h6> Tersedia {{ makanan.stok }} stok || Harganya {{ makanan.harga }}</h6>
+            </p>
+        </div>
+    </div>
+    <!-- Add to Cart form with quantity input -->
+    <form method="post" action="{% url 'add_to_cart' makanan.id %}">
+        {% csrf_token %}
+        <label for="quantity">Jumlah Pesanan:</label>
+        <input type="number" name="quantity" id="quantity" value="1" min="1">
+        <button type="submit" class="btn btn-success">Pesan</button>
+    </form>
+</div>
+{% endblock content %}

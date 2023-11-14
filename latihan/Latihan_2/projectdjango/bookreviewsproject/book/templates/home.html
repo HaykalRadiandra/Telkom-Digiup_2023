@@ -1,0 +1,38 @@
+    {% extends 'base.html' %}
+    {% block content %}
+    
+    <div class="container">
+        
+        <h1>Welcome to {{ name }}'s Home Render Page</h1>
+        
+        <form action="">
+            <div class="mb-3">
+                <label for="" class="form-label">Cari Buku:</label>
+                <input type="text" name="judul" class="form-control">
+            </div>
+            <button class="btn btn-primary">Search</button>
+        </form>
+        {% if searchJudul %}Pencarian untuk <strong>{{ searchJudul }}</strong>{% endif %}
+        <br/>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for book in books %}
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <img alt="" class="card-img-top" src="{{book.gambar.url}}" />
+                            <h5 class="card-title fw-bold">{{ book.judul }} | {{ book.pengarang }} | {{ book.tanggal_rilis|date:"d-m-Y" }}</h5>
+                            <p class="card-text">
+                                {{ book.sinopsis }}
+                                <br/>
+                                {{ book.isbn }} | {{ book.jumlah_halaman }} | {{ book.publisher.nama }}
+                                <a href="{% url 'detail' book.id %}">
+                                    <h5 class="card-title fw-bold">Detail</h5>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>  
+    </div>
+    {% endblock content %}

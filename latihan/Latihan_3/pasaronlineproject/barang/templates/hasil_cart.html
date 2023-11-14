@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Selamat! Pesanan Anda Telah Diterima</h2>
+    <p>Terima kasih atas pesanan Anda, <span id="namaPemesan"></span>.</p>
+    <p>Kami akan menghubungi Anda melalui nomor HP: <span id="nomorHp"></span>.</p>
+    <p>Terima kasih telah berbelanja di toko kami.</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-rHyoN1iRsVXV4nD5+e3J0eD70p8yGw1l+1z66LPMFUpXO7lFqwe5lY7VMPIaUtKa" crossorigin="anonymous"></script>
+
+<script>
+    // Dapatkan parameter URL untuk menampilkan informasi pemesan
+    const urlParams = new URLSearchParams(window.location.search);
+    const namaPemesan = urlParams.get('namaPemesan');
+    const nomorHp = urlParams.get('nomorHp');
+
+    // Tampilkan informasi pemesan di halaman
+    document.getElementById('namaPemesan').innerText = namaPemesan;
+    document.getElementById('nomorHp').innerText = nomorHp;
+</script>
+{% endblock content %}

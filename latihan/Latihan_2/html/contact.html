@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Haykal Radiandra</title>
+  </head>
+  <body>
+
+    <nav>
+      <a href="about.html">| About Me |</a>
+      <a href="index.html"> Home </a>
+      <a href="contact.html">| Contact Me |</a>
+    </nav>
+
+    <hr>
+
+
+    <main>
+      <section class="contact bg-blue" id="contact">
+
+        <div class="container">
+          <div class="row py-4">
+            <div class="col text-center">
+              <h2>Contact Me</h2>
+              <hr/>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-sm-8">
+              <form>
+
+                <!-- Name -->
+                <div class="form-group">
+                  <label for="name"><strong>Name</strong></label>
+                  <input
+                    autocomplete="off"
+                    class="form-control"
+                    id="name"
+                    placeholder="input your name"
+                    type="text"
+                  />
+                </div>
+
+                <!-- Email -->
+                
+                <div class="form-group">
+                  <label for="email"><strong>Email</strong></label>
+                  <input
+                    autocomplete="off"
+                    class="form-control"
+                    id="email"
+                    placeholder="input your email"
+                    type="email"
+                  />
+                </div>
+
+                <!-- Telephone -->
+
+                <div class="form-group">
+                  <label for="phone"><strong>Phone Number</strong></label>
+                  <input
+                    autocomplete="off"
+                    class="form-control"
+                    id="phone"
+                    placeholder="input your email"
+                    type="number"
+                  />
+                </div>
+
+                <!-- Choose Category -->
+
+                <div class="form-group">
+                  <label for="category">Category</label>
+                  <select class="form-control" id="category">
+                    <option value="choose">-- Choose Category --</option>
+                    <option value="front-end">Web Design</option>
+                    <option value="development">Web Development</option>
+                  </select>
+                </div>
+
+                <!-- Message -->
+
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    placeholder="input message"
+                    rows="4"
+                  ></textarea>
+                </div>
+
+                <!-- Button -->
+
+                <button class="btn btn-block btn-danger">
+                  Send the Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <br>
+    <br>
+    <hr>
+
+    <footer>
+      <p>Copyright &copy; 2023 Haykal Radiandra</p>
+    </footer>
+  </body>
+</html>
